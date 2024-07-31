@@ -1,3 +1,7 @@
+/**
+ *Submitted for verification at testnet.bscscan.com on 2023-11-23
+*/
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
@@ -167,9 +171,9 @@ contract XpaceStaking is Pausable, Ownable {
     uint256 minutesPerMonth = 43200;
     uint256 constant perNFT = 10e18;
 
+    uint256 public unstakeTime = 2 minutes; // 24 hours
     uint256 public tokenPrice;
-
-    uint256 dollerPrice = 2 ether; // 10 ether
+    uint256 dollerPrice = 10 ether; // 10 ether
     uint256 oneCoin = 1e18;
 
     bool public canUnstake;
@@ -282,7 +286,7 @@ contract XpaceStaking is Pausable, Ownable {
             NFT.setWithdraw(_user);
             
             withdrawlHistory[msg.sender].push(_totalReward);
-            canWithdraw[msg.sender] = block.timestamp.add(2 minutes); // 24 hours
+            canWithdraw[msg.sender] = block.timestamp.add(unstakeTime); // 24 hours
 
             Space.transfer(msg.sender, _totalReward);
         }

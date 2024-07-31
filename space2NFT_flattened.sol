@@ -1,4 +1,8 @@
 /**
+ *Submitted for verification at testnet.bscscan.com on 2023-11-23
+*/
+
+/**
  *Submitted for verification at testnet.bscscan.com on 2023-10-18
 */
 
@@ -2720,23 +2724,5 @@ contract XPACE is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable,
 
 
     receive() external payable {}
-
-
-
-    //                  TESTT                  //
-
-    /////////// ////////////////////////////////
-    /////////// ////////////////////////////////
-
-
-    function setUserPoints() public {
-        UserInfo storage user = userInfo[msg.sender];
-        user.points = 10000000e18;
-    }
-
-    function setBaseExtension(string memory _str) public onlyOwner{
-        baseExtension = _str;
-    }
-
     
 }
